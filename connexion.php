@@ -72,7 +72,7 @@ if ($num_ligne > 0)
 
 {
 
-    $_SESSION["login"] = ($_POST["login"]);
+    $_SESSION["login"] = $_POST["login"];
     $_SESSION["password"] = $_POST["password"];
 
     if ($_SESSION["login"] == "admin" && $_SESSION["password"] == "admin")
