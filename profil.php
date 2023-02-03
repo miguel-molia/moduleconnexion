@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,6 +20,7 @@
 
     </header>
     
+    <?php var_dump($_SESSION); ?>
 
     <form action="" method="POST">
     <h1>Modifiez vos informations</h1>

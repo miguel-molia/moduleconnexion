@@ -8,8 +8,9 @@ $user = "root";
 $password = "root";
 $database = "moduleconnexion";
 
-
-
+if (!empty($_SESSION)){
+    header('location: index.php');
+}
 
 ?>
 
@@ -56,24 +57,24 @@ $database = "moduleconnexion";
 
 
  <?php   $login = $_POST["login"];
-$prenom = $_POST["prenom"];
-$nom = $_POST["nom"];
 $password2 = $_POST["password"];
 
 $connect = mysqli_connect($host, $user, $password, $database);
 
 $var = mysqli_query($connect, " SELECT * FROM utilisateurs WHERE login ='$login'  AND password = '$password2' ");
-// $var = mysqli_fetch_all($var, MYSQLI_ASSOC);
+$fetchUser = mysqli_fetch_all($var, MYSQLI_ASSOC);
 $num_ligne = mysqli_num_rows($var);
-
 
 
 if ($num_ligne > 0)
 
 {
-
+    $_SESSION['prenom'] = $fetchUser[0]["prenom"];
+    $_SESSION['nom'] = $fetchUser[0]["nom"];
     $_SESSION["login"] = $_POST["login"];
     $_SESSION["password"] = $_POST["password"];
+    var_dump($num_ligne);
+
 
     if ($_SESSION["login"] == "admin" && $_SESSION["password"] == "admin")
 
@@ -99,6 +100,7 @@ elseif (isset($_POST["login"]) && isset($_POST["password"]) && $num_ligne == 0)
 </div>
 
 </body>
+
 </html>
 
 <style>

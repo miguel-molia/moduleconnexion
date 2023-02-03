@@ -15,7 +15,6 @@ $connect = mysqli_connect($host, $user, $password, $database);
 
 $var = mysqli_query($connect, " SELECT * FROM utilisateurs WHERE login ='$login'  AND password = '$password2' ");
 
-
 ?>
 
 
@@ -40,7 +39,7 @@ $var = mysqli_query($connect, " SELECT * FROM utilisateurs WHERE login ='$login'
     <header>
         
          
-          <div class="welcome">  Hello <?= $_SESSION["login"]?> !☺️ </div>
+          <div class="welcome">  Hello <?= $_SESSION["login"] ?> !☺️ </div>
             <a href="index.php">Accueil</a>
             <a href="profil.php">Profil</a>
             <a href="logout.php">Déconnexion</a>
