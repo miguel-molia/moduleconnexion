@@ -3,10 +3,10 @@
 session_start();
 
 
-$host = "localhost";
-$user = "root";
-$password = "root";
-$database = "moduleconnexion";
+$host = "localhost:3306";
+$user = "miguel-molia";
+$password = "Laplateforme2491";
+$database = "miguel-molia_moduleconnexion";
 
 if (!empty($_SESSION)){
     header('location: index.php');

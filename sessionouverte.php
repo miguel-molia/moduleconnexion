@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$host = "localhost";
-$user = "root";
-$password = "root";
-$database = "moduleconnexion";
+$host = "localhost:3306";
+$user = "miguel-molia";
+$password = "Laplateforme2491";
+$database = "miguel-molia_moduleconnexion";
 
 $login = $_POST["login"];
 $prenom = $_POST["prenom"];
