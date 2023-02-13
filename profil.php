@@ -16,11 +16,11 @@
 
     <header>
         <a href="index.php">Accueil</a>
-        <a href="inscription.php">Créer compte</a>
+        <a href="logout.php">Déconnexion</a>
 
     </header>
     
-    <?php var_dump($_SESSION); ?>
+    
 
     <form action="" method="POST">
     <h1>Modifiez vos informations</h1>
