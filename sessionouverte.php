@@ -3,7 +3,7 @@ session_start();
 
 $host = "localhost:3306";
 $user = "miguel-molia";
-$password = "Laplateforme2491";
+$password = "Laplateforme24";
 $database = "miguel-molia_moduleconnexion";
 
 $login = $_POST["login"];

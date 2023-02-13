@@ -1,6 +1,6 @@
 <?php
 session_start();
-$mysqli = new mysqli("localhost:3306", "miguel-molia", "Laplateforme2491", "miguel-molia_moduleconnexion");
+$mysqli = new mysqli("localhost:3306", "miguel-molia", "Laplateforme24", "miguel-molia_moduleconnexion");
 if ($mysqli -> connect_errno){
     echo "failed to connect to my MySQL" .$mysqli -> connect_error; 
     exit();

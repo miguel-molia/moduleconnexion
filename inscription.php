@@ -7,7 +7,7 @@ session_start();
     $password = $_POST['password'];
     // var_dump($_POST);
     
-    $bdd= new mysqli("localhost:3306", "miguel-molia", "Laplateforme2491", "miguel-molia_moduleconnexion");
+    $bdd= new mysqli("localhost:3306", "miguel-molia", "Laplateforme24", "miguel-molia_moduleconnexion");
    if( $mysqli->connect_error ) {
         echo "erreur de connexion a MySQL:" .$mysqli -> connect_error;
         exit();
