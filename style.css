@@ -1,0 +1,133 @@
+header {
+    font-family: 'Fredoka One', cursive;
+    font-size: 150%;
+    display: flex;
+    gap: 30px;
+    justify-content: end;
+}
+
+.container {
+ width: 150px;
+ margin: auto; 
+ margin-top: 5%;
+ 
+}
+
+input {
+    margin-bottom: 5px;
+    display: block;
+
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: black;
+}
+
+body {
+    background-image: url(sunset.png);
+    background-size: cover;
+}
+
+h1{
+    font-family: 'Lilita One', cursive;
+    width: 150px;
+ margin: auto; 
+ margin-top: 5%;
+ padding-left: 100px;
+}
+
+.mdp
+{
+background-color: #adad85;
+
+}
+
+input[type=submit] {
+ background-color: wheat;
+ color: black;
+ padding: 5px 20px;
+ margin: 15px 45px;
+ cursor: pointer;
+ width: 71%;
+}
+
+input[type=password]
+{
+    border: none;
+}
+
+.monsite
+
+{
+    font-family: 'Lilita One', cursive;
+    font-size: 70px;
+    padding: 280px 0px 0px 400px;
+    
+}
+
+.container2 {
+    color: #ffdd99;
+    width: 100px;
+    margin: auto;
+    display: flex;
+    padding-top: 20%;
+    padding-top: 6%;
+    font-size: 20px;
+    gap: 27px;
+}
+
+.container2 a 
+
+{
+
+    color: black;
+}
+
+/* .container2 :hover
+
+{
+    color: white;
+} */
+
+.echo {
+    color: black;
+    margin-left: 44%;
+    font-size: 30px;
+    font-family: 'Anton', sans-serif;
+
+
+}
+
+.admin
+
+{
+    background-image: url(sunset2.png) ;
+}
+
+table
+
+{
+    border-collapse: collapse;
+    border: solid;
+}
+
+th, td
+{
+    border: solid;
+    background-color: #ffdd99;
+}
+
+
+
+.tableauu
+{
+    padding-left: 40%;
+    padding-top: 10%;
+    font-size: 20px;
+}

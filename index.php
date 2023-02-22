@@ -1,10 +1,12 @@
 <?php
 
-
+//j'ouvre une session
 session_start(); 
 
 // var_dump($_SESSION);
 
+
+//si la session existe 
 if(isset($_SESSION['login'])) {
         
             echo '<header>
@@ -39,6 +41,7 @@ if(isset($_SESSION['login'])) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
     
 </head>
@@ -53,14 +56,14 @@ if(isset($_SESSION['login'])) {
         </div>
         </p>
 
-
+<!-- <?php var_dump(date('Y-m-d H:i:s')); ?> -->
     </main>
     
 
 </body>
 </html>
 
-<style>
+<!-- <style>
 
 header {
     font-family: 'Fredoka One', cursive;
@@ -106,4 +109,4 @@ body {
 }
 
 
-</style>
+</style> -->

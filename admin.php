@@ -1,12 +1,19 @@
 <?php
+
+//j'ouvre une session
 session_start();
-$mysqli = new mysqli("localhost:3306", "miguel-molia", "Laplateforme24", "miguel-molia_moduleconnexion");
+$mysqli = new mysqli("localhost", "root", "root", "moduleconnexion");
 if ($mysqli -> connect_errno){
     echo "failed to connect to my MySQL" .$mysqli -> connect_error; 
     exit();
 }
+
+    //j'effectue ma requete 
    $request = $mysqli->query("SELECT * FROM `utilisateurs` ");
-    $results = $request->fetch_array(MYSQLI_ASSOC);
+    
+   //je recupere les resultats 
+   $results = $request->fetch_array(MYSQLI_ASSOC);
+    // var_dump($results);
     ?>
 
 <!DOCTYPE html>
@@ -25,9 +32,17 @@ if ($mysqli -> connect_errno){
 
 </header>
     
+
+    <div class="tableauu">
+
     <?php
+
+
+
+        //j'affiche les resultats sous forme de tableau
         echo "<table>";
     
+        echo "<tr>";
     
         foreach ($results as $key => $value)
             {
@@ -47,46 +62,13 @@ if ($mysqli -> connect_errno){
         echo "</table>";
     ?>
 
+</div>
+
 </body>
+
 </html>
 
 
-<style>
-    
-    body {
-    background-image: url(sunset2.png);
-    background-size: cover;
-    }
 
-    header {
-    font-family: 'Fredoka One', cursive;
-    font-size: 150%;
-    display: flex;
-    gap: 30px;
-    justify-content: end;
-}
 
-a {
-    color: white;
-    text-decoration: none;
 
-}
-
-a:hover
-{
-    color: black;
-}
-    
-table
-
-{
-    border-collapse: collapse;
-    border: solid;
-}
-
-th, td
-{
-    border: solid;
-}
-    
-    </style>

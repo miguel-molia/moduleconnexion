@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$host = "localhost:3306";
-$user = "miguel-molia";
-$password = "Laplateforme24";
-$database = "miguel-molia_moduleconnexion";
+$host = "localhost";
+$user = "root";
+$password = "root";
+$database = "moduleconnexion";
 
 $login = $_POST["login"];
 $prenom = $_POST["prenom"];
@@ -31,6 +31,7 @@ $var = mysqli_query($connect, " SELECT * FROM utilisateurs WHERE login ='$login'
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
     
 </head>
@@ -62,7 +63,7 @@ $var = mysqli_query($connect, " SELECT * FROM utilisateurs WHERE login ='$login'
 </body>
 </html>
 
-<style>
+<!-- <style>
 
 header {
     font-family: 'Fredoka One', cursive;
@@ -100,4 +101,4 @@ body {
 
 
 
-</style>
+</style> -->

@@ -1,13 +1,15 @@
 <?php
-
+//j'ouvre une session
 session_start();
 
+// j'attribue des variables aux differents parametres pour me connecter a la base de donnée
+$host = "localhost";
+$user = "root";
+$password = "root";
+$database = "moduleconnexion";
 
-$host = "localhost:3306";
-$user = "miguel-molia";
-$password = "Laplateforme24";
-$database = "miguel-molia_moduleconnexion";
 
+//si la session n'est pas vide (si on est connecté) rediriger vers page d'accueil
 if (!empty($_SESSION)){
     header('location: index.php');
 }
@@ -30,6 +32,7 @@ if (!empty($_SESSION)){
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -55,22 +58,38 @@ if (!empty($_SESSION)){
 
     <input type="submit" value="Connexion">
 
+<?php   
 
- <?php   $login = $_POST["login"];
+//j'attribue une variable au login que je recupere dans le formulaire
+$login = $_POST["login"];
+
+//j'attribue une variable au mot de passe que je recupere dans le formulaire
 $password2 = $_POST["password"];
 
+//je me connecte à la base de donnée
 $connect = mysqli_connect($host, $user, $password, $database);
 
+//j'effectue ma requete en selectionnant chaque login et mot de passe
 $var = mysqli_query($connect, " SELECT * FROM utilisateurs WHERE login ='$login'  AND password = '$password2' ");
+
+// Je recupere les donnees que j'ai demandé dans la requete (fetch = recuperer, j'affiches pas, pour afficher
+// il faut le mettre dans un tableau)
 $fetchUser = mysqli_fetch_all($var, MYSQLI_ASSOC);
+
+//Je compte le nombre de rangées dans la base de donnée
 $num_ligne = mysqli_num_rows($var);
 
 
+//si le nombre est superieur à 0, c'est à dire si au moins un utilisateur existe
 if ($num_ligne > 0)
 
-{
+{   
+    //
+    $_SESSION['id'] = $fetchUser[0]["id"];
     $_SESSION['prenom'] = $fetchUser[0]["prenom"];
     $_SESSION['nom'] = $fetchUser[0]["nom"];
+    
+    //j'associe les 
     $_SESSION["login"] = $_POST["login"];
     $_SESSION["password"] = $_POST["password"];
     var_dump($num_ligne);
@@ -94,6 +113,7 @@ elseif (isset($_POST["login"]) && isset($_POST["password"]) && $num_ligne == 0)
 {
     echo "<p class= 'echo'>login ou mot de passe incorrect!</p>";
 }
+
 ?>
 
 </form>
@@ -103,7 +123,7 @@ elseif (isset($_POST["login"]) && isset($_POST["password"]) && $num_ligne == 0)
 
 </html>
 
-<style>
+<!-- <style>
 
 header {
     font-family: 'Fredoka One', cursive;
@@ -168,7 +188,7 @@ input[type=submit] {
 
 
 </style>
-
+ -->
 
 
 <?php

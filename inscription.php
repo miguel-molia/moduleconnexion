@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 
     $login = $_POST['login'];
@@ -7,7 +9,7 @@ session_start();
     $password = $_POST['password'];
     // var_dump($_POST);
     
-    $bdd= new mysqli("localhost:3306", "miguel-molia", "Laplateforme24", "miguel-molia_moduleconnexion");
+    $bdd= new mysqli("localhost", "root", "root", "moduleconnexion");
    if( $mysqli->connect_error ) {
         echo "erreur de connexion a MySQL:" .$mysqli -> connect_error;
         exit();
@@ -32,7 +34,7 @@ session_start();
 
         elseif (mysqli_num_rows(mysqli_query($bdd,"SELECT * FROM utilisateurs WHERE login='" . $_POST['login'] . "'" ))==1)
         {
-            echo "Cet login est déjà utilisé!";
+            echo "Ce login est déjà utilisé!";
         }
 
         
@@ -75,6 +77,7 @@ session_start();
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -116,7 +119,7 @@ session_start();
 </body>
 </html>
 
-<style>
+<!-- <style>
 
 header {
     font-family: 'Fredoka One', cursive;
@@ -181,4 +184,4 @@ input[type=password]
     border: none;
 }
 
-</style>
+</style> -->
